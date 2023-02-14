@@ -1,0 +1,1 @@
+# cryptoescudo-installer
