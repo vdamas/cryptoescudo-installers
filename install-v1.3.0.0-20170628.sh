@@ -5,7 +5,7 @@ DAEMON=$DAEMONBASE/cryptoescudod
 DAEMONDATA=$DAEMONBASE/data
 DAEMONCONF=$DAEMONDATA/cryptoescudo.conf
 
-DAEMONSCRIPTS=https://github.com/vdamas/cryptoescudo-installer/blob/main/daemon-scripts
+DAEMONSCRIPTS=https://raw.githubusercontent.com/vdamas/cryptoescudo-installer/main/daemon-scripts/
 DAEMONSTART=$DAEMONBASE/daemon_start.sh
 DAEMONDEBUG=$DAEMONBASE/daemon_debug.sh
 DAEMONSTOP=$DAEMONBASE/daemon_stop.sh
