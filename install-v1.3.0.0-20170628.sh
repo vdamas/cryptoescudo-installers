@@ -9,7 +9,7 @@ DAEMONSCRIPTS=https://raw.githubusercontent.com/vdamas/cryptoescudo-installer/ma
 DAEMONSTART=$DAEMONBASE/daemon_start.sh
 DAEMONDEBUG=$DAEMONBASE/daemon_debug.sh
 DAEMONSTOP=$DAEMONBASE/daemon_stop.sh
-DAEMONDEKILL=$DAEMONBASE/daemon_kill.sh
+DAEMONKILL=$DAEMONBASE/daemon_kill.sh
 DAEMONQUERY=$DAEMONBASE/daemon_query.sh
 DAEMONCHAINUPD=$DAEMONBASE/chain_update.sh
 
