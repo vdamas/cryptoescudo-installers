@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 # Absolute path to this script
 SCRIPT=$(readlink -f "$0")
 

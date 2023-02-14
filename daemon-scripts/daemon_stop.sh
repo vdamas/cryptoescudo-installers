@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 # Check daemon running
 DAEMON=$(ps -ef | awk '/[d]atadir.*daemon/{print $2}' | wc -l)
 if [ "$DAEMON" -eq 0 ]; then
