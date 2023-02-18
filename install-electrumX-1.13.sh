@@ -17,6 +17,13 @@ if [ ! -f "$DAEMON" ]; then
     echo "$DAEMON does not exist. Install it first !!!"
 else
 
+	# Update 
+	apt-get update -y
+	apt-get install -y git make build-essential libssl-dev zlib1g-dev \
+	libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+	libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev \
+	libgdbm-dev libnss3-dev libedit-dev libc6-dev libleveldb-dev
+
 	# Install python 3.6
 	cd /tmp
 	wget https://www.python.org/ftp/python/3.6.15/Python-3.6.15.tgz
@@ -26,13 +33,6 @@ else
 	./configure  -with-lto  --with-pydebug
 	make -j 8  # adjust for number of your CPU cores
 	make altinstall
-
-	# Update 
-	apt-get update -y
-	apt-get install -y git make build-essential libssl-dev zlib1g-dev \
-	libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-	libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev \
-	libgdbm-dev libnss3-dev libedit-dev libc6-dev libleveldb-dev
 
 	# Install python dependencies
 	/usr/local/bin/python3.6 -m pip install --upgrade pip setuptools wheel
