@@ -57,7 +57,7 @@ else
 	openssl x509 -req -days 1825 -in $ELECTRUMBASE/.electrumx/server.csr -signkey $ELECTRUMBASE/.electrumx/server.key -out $ELECTRUMBASE/.electrumx/server.crt
 
 	# Generate banner file
-chmod 777 .electrumx/
+
 cat << EOT > $ELECTRUMBASE/.electrumx/banner_file.txt
 **** Cryptoescudo.Network - Hosted for the community ****
 Cryptoescudo Version: \$DAEMON_VERSION
@@ -96,8 +96,5 @@ EOT
 	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz ./.electrumx/db/
 	rm -f ./electrumX-1.13.0-leveldb-20220216.tar.gz
 	
-	#chmod 777 $ELECTRUMBASE/.electrumx/db
-	
-	chown -R $(id -u) .
 	chmod +x $ELECTRUMBASE/electrumX_start.sh
 fi
