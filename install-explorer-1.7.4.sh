@@ -221,11 +221,11 @@ cat << EOT > $EXPLORERBASE/settings.json
 EOT
 
 # Get database
-wget https://cryptoescudo.work/getchain/explorerdb-2023-02-26-0008.tgz
-tar -xvf explorerdb-2023-02-26-0008.tgz
-
-
-
+wget https://cryptoescudo.work/downloads/explorerdb-1.7.4-mongodb.tar.gz
+tar -xvf explorerdb-1.7.4-mongodb.tar.gz
+#mongo -eval 'db.dropDatabase()' explorerdb
+mongorestore -d explorerdb --gzip ./explorerdb
+rm -Rf ./explorerdb
 
 	# Generate explorer start script
 cat << EOT > $EXPLORERBASE/explorer_start.sh
