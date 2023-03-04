@@ -7,7 +7,9 @@
    2. sudo chmod +x install-v1.3.0.0-20170628.sh   
    3. sudo ./install-v1.3.0.0-20170628.sh
    4. cd /opt/cryptescudo
-   5. sudo ./daemon_start.sh
+   5 sudo ./chain_update.sh (fetch full blockchain backup and starts daemon)
+   or
+   5. sudo ./daemon_start.sh 
    
 ### Install cryptoescudo v1.3.0.0-20170628 on docker (ubuntu 22.04)
    
