@@ -27,7 +27,7 @@ else
 
 	git clone https://github.com/vdamas/cryptoescudo-explorer
 
-	mv explorer $EXPLORERBASE
+	mv cryptoescudo-explorer $EXPLORERBASE
 
 	cd $EXPLORERBASE
 	
