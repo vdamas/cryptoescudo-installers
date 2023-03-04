@@ -250,8 +250,8 @@ cat << EOT > $EXPLORERBASE/explorer_sync.sh
 
 cd $EXPLORERBASE
 node scripts/sync.js index update
-node scripts/sync.js index market
 node scripts/peers.js
+#node scripts/sync.js market
 EOT
 
 	
