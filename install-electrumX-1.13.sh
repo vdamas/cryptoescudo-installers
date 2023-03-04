@@ -90,15 +90,14 @@ set -a
 source $ELECTRUMBASE/.electrumx/electrumx.conf
 /usr/local/bin/python3.6 $ELECTRUMBASE/electrumx_server
 EOT
-
-	chmod 777 $ELECTRUMBASE/.electrumx/db
 	
 	# Get electrumX database
 	wget https://cryptoescudo.work/downloads/electrumX-1.13.0-leveldb.tar.gz
 	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz ./.electrumx/db/
 	rm -f ./electrumX-1.13.0-leveldb-20220216.tar.gz
 	
-	chmod 777 $ELECTRUMBASE/.electrumx/db
+	#chmod 777 $ELECTRUMBASE/.electrumx/db
 	
+	chown -R $(id -u) .
 	chmod +x $ELECTRUMBASE/electrumX_start.sh
 fi
