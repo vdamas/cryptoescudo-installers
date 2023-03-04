@@ -24,7 +24,7 @@
    2. sudo chmod +x install-electrumX-1.13.sh   
    3. sudo ./install-electrumX-1.13.sh
    4. cd /opt/electrumX-1.13.0
-   5. sudo ./electrumX_start.sh
+   5. ./electrumX_start.sh
 
 ### Install cryptoescudo v1.1.5.1-20141117 (ubuntu 18.04)
      
