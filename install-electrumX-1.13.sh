@@ -93,7 +93,7 @@ EOT
 	
 	# Get electrumX database
 	wget https://cryptoescudo.work/downloads/electrumX-1.13.0-leveldb.tar.gz
-	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz ./.electrumx/db/
+	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz
 	rm -f ./electrumX-1.13.0-leveldb-20220216.tar.gz
 	
 	chmod +x $ELECTRUMBASE/electrumX_start.sh
