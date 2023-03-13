@@ -56,6 +56,13 @@ else
 	openssl req -new -key $ELECTRUMBASE/.electrumx/server.key -out $ELECTRUMBASE/.electrumx/server.csr -subj "/C=PT/ST=Lisbon/L=Lisbon/O=Cryptoescudo/OU=IT Department/CN=cryptoescudo"
 	openssl x509 -req -days 1825 -in $ELECTRUMBASE/.electrumx/server.csr -signkey $ELECTRUMBASE/.electrumx/server.key -out $ELECTRUMBASE/.electrumx/server.crt
 
+
+	# Get electrumX database
+	wget https://cryptoescudo.work/downloads/electrumX-1.13.0-leveldb.tar.gz
+	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz
+	rm -f ./electrumX-1.13.0-leveldb-20220216.tar.gz
+        chmod -R 777 .electrum 
+
 	# Generate banner file
 
 cat << EOT > $ELECTRUMBASE/.electrumx/banner_file.txt
@@ -90,11 +97,6 @@ set -a
 source $ELECTRUMBASE/.electrumx/electrumx.conf
 /usr/local/bin/python3.6 $ELECTRUMBASE/electrumx_server
 EOT
-	
-	# Get electrumX database
-	wget https://cryptoescudo.work/downloads/electrumX-1.13.0-leveldb.tar.gz
-	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz
-	rm -f ./electrumX-1.13.0-leveldb-20220216.tar.gz
 	
 	chmod +x $ELECTRUMBASE/electrumX_start.sh
 fi
