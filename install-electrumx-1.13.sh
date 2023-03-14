@@ -95,8 +95,15 @@ cat << EOT > $ELECTRUMBASE/electrumx_start.sh
 
 set -a 
 source $ELECTRUMBASE/.electrumx/electrumx.conf
-/usr/local/bin/python3.6 $ELECTRUMBASE/electrumx_server
+nohup /usr/local/bin/python3.6 $ELECTRUMBASE/electrumx_server > $ELECTRUMBASE/electrumx_debug.log &
+EOT
+
+	# Generate electrumX debug script
+cat << EOT > $ELECTRUMBASE/electrumx_debug.sh
+#!/bin/bash
+tail -f $ELECTRUMBASE/electrumx_debug.log 
 EOT
 	
 	chmod +x $ELECTRUMBASE/electrumx_start.sh
+	chmod +x $ELECTRUMBASE/electrumx_debug.sh
 fi
