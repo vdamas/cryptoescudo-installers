@@ -24,4 +24,4 @@ RUN /tmp/install-electrumx-1.13.sh
 EXPOSE 50001 50002 61143
 EOF
 
-docker build -t electrumx1.13:v1.3.0.0-20170628 .
+docker build -t cryptoescudo-electrumx:1.13 .
