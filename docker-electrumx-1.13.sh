@@ -15,11 +15,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 # ElectrumX on docker
 ENV ALLOW_ROOT=1
 
-COPY ./install-electrumX-1.13.sh /tmp/
+COPY ./install-electrumx-1.13.sh /tmp/
 
-RUN chmod +x /tmp/install-electrumX-1.13.sh
+RUN chmod +x /tmp/install-electrumx-1.13.sh
 
-RUN /tmp/install-electrumX-1.13.sh
+RUN /tmp/install-electrumx-1.13.sh
 
 EXPOSE 50001 50002 61143
 EOF
