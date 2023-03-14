@@ -58,9 +58,9 @@ else
 
 
 	# Get electrumX database
-	wget https://cryptoescudo.work/downloads/electrumX-1.13.0-leveldb.tar.gz
-	tar -xvf ./electrumX-1.13.0-leveldb.tar.gz
-	rm -f ./electrumX-1.13.0-leveldb-20220216.tar.gz
+	wget https://cryptoescudo.work/downloads/electrumx-1.13.0-leveldb.tar.gz
+	tar -xvf ./electrumx-1.13.0-leveldb.tar.gz
+	rm -f ./electrumx-1.13.0-leveldb-20220216.tar.gz
         chmod -R 777 $ELECTRUMBASE/.electrumx
 
 	# Generate banner file
@@ -77,7 +77,7 @@ EOT
 RPCPASS=$(grep ^rpcpassword= $DAEMONCONF | awk '{split($0,a,"="); print a[2]}')
 cat << EOT > $ELECTRUMBASE/.electrumx/electrumx.conf
 COIN=Cryptoescudo
-DB_DIRECTORY=/opt/electrumX-1.13.0/.electrumx/db
+DB_DIRECTORY=/opt/electrumx-1.13.0/.electrumx/db
 DAEMON_URL=http://cryptoescudorpc:$RPCPASS@127.0.0.1:61142
 NET=mainnet
 DB_ENGINE=leveldb
