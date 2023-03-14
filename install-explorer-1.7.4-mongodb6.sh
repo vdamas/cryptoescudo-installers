@@ -19,8 +19,15 @@ else
  
   # MongoDB 6
 	apt-get install -y gnupg
-  wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -
-	echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+	if [ "$EUID" -ne 0 ]
+	then
+	  wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+	  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -c -s)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+	else
+	  wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -
+	  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -c -s)/mongodb-org/6.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+	fi
+        
 	apt-get update
 	apt-get install -y mongodb-org
 
