@@ -33,6 +33,10 @@ EOF
 
 tee "$SCRIPTPATH/start-all.sh" > /dev/null <<EOF
 #!/bin/bash
+
+echo "Starting MongoDB"
+nohup mongod > /dev/null 2>&1 &
+
 echo "Starting cryptoescudo daemon"
 nohup /opt/cryptoescudo/daemon_start.sh > /dev/null 2>&1 &
 
