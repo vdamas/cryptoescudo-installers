@@ -16,16 +16,19 @@ else
 	apt-get install -y nodejs
 	apt-get install -y npm
 	#apt-get install -y mongodb
+	
+  # Get codename
+  . /etc/os-release
  
   # MongoDB 6
 	apt-get install -y gnupg
 	if [ "$EUID" -ne 0 ]
 	then
 	  wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
-	  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -c -s)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+	  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $UBUNTU_CODENAME/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 	else
 	  wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -
-	  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -c -s)/mongodb-org/6.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+	  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $UBUNTU_CODENAME/mongodb-org/6.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 	fi
         
 	apt-get update
