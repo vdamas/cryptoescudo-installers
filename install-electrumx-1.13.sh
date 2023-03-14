@@ -5,7 +5,7 @@ DAEMON=$DAEMONBASE/cryptoescudod
 DAEMONDATA=$DAEMONBASE/data
 DAEMONCONF=$DAEMONDATA/cryptoescudo.conf
 
-ELECTRUMBASE=/opt/electrumX-1.13.0
+ELECTRUMBASE=/opt/electrumx-1.13.0
 
 # Absolute path to this script
 SCRIPT=$(readlink -f "$0")
@@ -42,7 +42,7 @@ else
 	# Install electrumX-1.13.0
 	cd $BASE
 
-	git clone https://github.com/vdamas/cesc-electrumX-1.13.0 electrumX-1.13.0
+	git clone https://github.com/vdamas/cesc-electrumX-1.13.0 electrumx-1.13.0
 
 	cd $ELECTRUMBASE
 	/usr/local/bin/python3.6 setup.py install
@@ -90,7 +90,7 @@ SERVICES=rpc://127.0.0.1:8000,tcp://:50001,ssl://:50002
 EOT
 
 	# Generate electrumX start script
-cat << EOT > $ELECTRUMBASE/electrumX_start.sh
+cat << EOT > $ELECTRUMBASE/electrumx_start.sh
 #!/bin/bash
 
 set -a 
@@ -98,5 +98,5 @@ source $ELECTRUMBASE/.electrumx/electrumx.conf
 /usr/local/bin/python3.6 $ELECTRUMBASE/electrumx_server
 EOT
 	
-	chmod +x $ELECTRUMBASE/electrumX_start.sh
+	chmod +x $ELECTRUMBASE/electrumx_start.sh
 fi
