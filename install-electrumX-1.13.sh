@@ -91,7 +91,7 @@ EOT
 
 	# Generate electrumX start script
 cat << EOT > $ELECTRUMBASE/electrumX_start.sh
-!#/bin/bash
+#!/bin/bash
 
 set -a 
 source $ELECTRUMBASE/.electrumx/electrumx.conf
