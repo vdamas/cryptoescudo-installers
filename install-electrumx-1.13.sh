@@ -5,7 +5,7 @@ DAEMON=$DAEMONBASE/cryptoescudod
 DAEMONDATA=$DAEMONBASE/data
 DAEMONCONF=$DAEMONDATA/cryptoescudo.conf
 
-ELECTRUMBASE=/opt/electrumx-1.13.0
+ELECTRUMBASE=/opt/electrumx
 
 # Absolute path to this script
 SCRIPT=$(readlink -f "$0")
@@ -42,7 +42,7 @@ else
 	# Install electrumX-1.13.0
 	cd $BASE
 
-	git clone https://github.com/vdamas/cesc-electrumX-1.13.0 electrumx-1.13.0
+	git clone https://github.com/vdamas/cesc-electrumX-1.13.0 electrumx
 
 	cd $ELECTRUMBASE
 	/usr/local/bin/python3.6 setup.py install
@@ -77,7 +77,7 @@ EOT
 RPCPASS=$(grep ^rpcpassword= $DAEMONCONF | awk '{split($0,a,"="); print a[2]}')
 cat << EOT > $ELECTRUMBASE/.electrumx/electrumx.conf
 COIN=Cryptoescudo
-DB_DIRECTORY=/opt/electrumx-1.13.0/.electrumx/db
+DB_DIRECTORY=/opt/electrumx/.electrumx/db
 DAEMON_URL=http://cryptoescudorpc:$RPCPASS@127.0.0.1:61142
 NET=mainnet
 DB_ENGINE=leveldb
