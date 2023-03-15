@@ -1,5 +1,7 @@
 # Cryptoescudo installer (linux)
 
+NOTE: Use this only in a clean image or docker container, i am not responsible for the problems caused if installed in production environments with other applications / databases running on it. 
+
    1. clone this repo and enter directory  
 
 ### Install cryptoescudo v1.3.0.0-20170628 (ubuntu 22.04)
