@@ -5,7 +5,7 @@ DAEMON=$DAEMONBASE/cryptoescudod
 DAEMONDATA=$DAEMONBASE/data
 DAEMONCONF=$DAEMONDATA/cryptoescudo.conf
 
-EXPLORERBASE=/opt/cryptoescudo-explorer
+EXPLORERBASE=/opt/explorer
 
 if [ ! -f "$DAEMON" ]; then
     echo "$DAEMON does not exist. Install it first !!!"
