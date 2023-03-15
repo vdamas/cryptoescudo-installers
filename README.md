@@ -30,7 +30,7 @@ NOTE: Use this only in a clean image or docker container, i am not responsible f
    5. ./electrumx_start.sh
 
 ### Install cryptoescudo v1.1.5.1-20141117 (ubuntu 18.04)
-     
+        
    2. sudo chmod +x buildinstall-daemon-v1.1.5.1-20141117.sh   
    3. sudo ./buildinstall-daemon-v1.1.5.1-20141117.sh
    4. cd /opt/cryptescudo
@@ -48,9 +48,12 @@ NOTE: Use this only in a clean image or docker container, i am not responsible f
    
    2. sudo chmod +x docker-cryptoescudo-allinone.sh
    3. sudo ./docker-cryptoescudo-allinone.sh
-   4. docker run -d docker run -d cryptoescudo-allinone:yyyymmdd -p 81:81 -p 50001:50001 -p 50002:50002 -p 61143:61143 
+   4. docker run -d docker run -d cryptoescudo-allinone:yyyymmdd -p 81:81 -p 50001:50001 -p 50002:50002 -p 61143:61143    
       a. yyyymmdd - check with: docker image ls
-   6. enter container to debug : docker exec -it [containerid] /bin/bash
-      a. debug daemon: /opt/cryptoescudo/daemon_debug.sh
-      b. debug explorer: /opt/explorer/explorer_debug.sh
-      c. debug daemon: /opt/electrumx/electrumx_debug.sh  
+   6. enter container to debug : docker exec -it [containerid] /bin/bash   
+      a. debug daemon: /opt/cryptoescudo/daemon_debug.sh   
+      b. debug explorer: /opt/explorer/explorer_debug.sh   
+      c. debug daemon: /opt/electrumx/electrumx_debug.sh   
+   
+   
+    
