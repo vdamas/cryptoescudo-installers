@@ -46,8 +46,9 @@
    
    2. sudo chmod +x docker-cryptoescudo-allinone.sh
    3. sudo ./docker-cryptoescudo-allinone.sh
-   4. docker run -d docker run -d cryptoescudo-allinone:yyyymmdd -p 81:81 -p 50001:50001 -p 50002:50002 -p 61143:61143 (yyyymmdd - check with: docker image ls)
-   5. enter container to debug : docker exec -it [containerid] /bin/bash
+   4. docker run -d docker run -d cryptoescudo-allinone:yyyymmdd -p 81:81 -p 50001:50001 -p 50002:50002 -p 61143:61143 
+      a. yyyymmdd - check with: docker image ls
+   6. enter container to debug : docker exec -it [containerid] /bin/bash
       a. debug daemon: /opt/cryptoescudo/daemon_debug.sh
       b. debug explorer: /opt/explorer/explorer_debug.sh
       c. debug daemon: /opt/electrumx/electrumx_debug.sh  
