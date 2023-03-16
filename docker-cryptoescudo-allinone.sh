@@ -40,7 +40,7 @@ nohup mongod > /dev/null 2>&1 &
 echo "Starting cryptoescudo daemon"
 nohup /opt/cryptoescudo/daemon_start.sh > /dev/null 2>&1 &
 
-cd /opt/cryptoescudo-explorer
+cd /opt/explorer
 echo "Starting explorer"
 nohup ./explorer_start.sh > debug.log 2>&1 &
 
