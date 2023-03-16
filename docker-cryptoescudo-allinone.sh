@@ -18,19 +18,19 @@ apt-get install cron
 
 # Check if explorer sync stuck
 crontab -l | { cat; echo "# Check if explorer sync stuck"; } | crontab -
-crontab -l | { cat; echo "*/5 * * * * cd /opt/cryptoescudo-explorer && find ./tmp/index.pid -type f -mmin +15 -exec rm -f {} + >/dev/null 2>&1"; } | crontab -
+crontab -l | { cat; echo "*/5 * * * * cd /opt/explorer && find ./tmp/index.pid -type f -mmin +15 -exec rm -f {} + >/dev/null 2>&1"; } | crontab -
 
 # Update explorer index
 crontab -l | { cat; echo "# Update explorer index"; } | crontab -
-crontab -l | { cat; echo "*/1 * * * * cd /opt/cryptoescudo-explorer && node ./scripts/sync.js index update &> ./tmp/syncindex.out"; } | crontab -
+crontab -l | { cat; echo "*/1 * * * * cd /opt/explorer && node ./scripts/sync.js index update &> ./tmp/syncindex.out"; } | crontab -
 
 # Update markets
 crontab -l | { cat; echo "# Update explorer markets"; } | crontab -
-crontab -l | { cat; echo "*/2 * * * * cd /opt/cryptoescudo-explorer && node ./scripts/sync.js market &> ./syncmarket.out"; } | crontab -
+crontab -l | { cat; echo "*/2 * * * * cd /opt/explorer && node ./scripts/sync.js market &> ./syncmarket.out"; } | crontab -
 
 # Update peers
 crontab -l | { cat; echo "# Update explorer peers"; } | crontab -
-crontab -l | { cat; echo "*/5 * * * * cd /opt/cryptoescudo-explorer && node ./scripts/peers.js &> ./syncpeers.out"; } | crontab -
+crontab -l | { cat; echo "*/5 * * * * cd /opt/explorer && node ./scripts/peers.js &> ./syncpeers.out"; } | crontab -
 
 EOF
 
