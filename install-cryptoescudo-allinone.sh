@@ -66,7 +66,7 @@ chmod +x /opt/start-all.sh
 TZ=Europe/Lisbon
 DEBIAN_FRONTEND=noninteractive
 
-# ElectrumX on docker
+# ElectrumX run with root (to review later)
 ALLOW_ROOT=1
 
 # Install daemon
