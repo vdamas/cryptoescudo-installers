@@ -88,7 +88,7 @@ SSL_CERTFILE=$ELECTRUMBASE/.electrumx/server.crt
 SSL_KEYFILE=$ELECTRUMBASE/.electrumx/server.key
 BANNER_FILE=$ELECTRUMBASE/.electrumx/banner_file.txt
 DONATION_ADDRESS=
-SERVICES=rpc://127.0.0.1:8000,tcp://:50001,ssl://:50002
+SERVICES=rpc://127.0.0.1:8000,tcp://:50001,ssl://:50002,wss://:50004
 EOT
 
 	# Generate electrumX start script
