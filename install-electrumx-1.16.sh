@@ -23,12 +23,13 @@ else
 	libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
 	libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev \
 	libgdbm-dev libnss3-dev libedit-dev libc6-dev libleveldb-dev
-	sudo apt install pkg-config make -y
+	apt install xz-utils pkg-config make -y
 
 	# Install python 3.10
 	cd /tmp
-	wget wget https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tar.gz
-	tar -xzf Python-3.10.10.tar.gz
+	wget https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tar.xz
+	xz -d -v Python-3.10.10.tar.xz
+	tar -xf Python-3.10.10.tar
 	cd Python-3.10.10
 	#./configure --enable-optimizations  -with-lto  --with-pydebug
 	./configure  -with-lto  --with-pydebug
