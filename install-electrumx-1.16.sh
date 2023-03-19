@@ -44,7 +44,7 @@ else
 	# Install electrumX-1.16.0
 	cd $BASE
 
-	git clone https://github.com/vdamas/cesc-electrumX-1.16 electrumx
+	git clone https://github.com/vdamas/cesc-electrumX-1.16.0 electrumx
 
 	cd $ELECTRUMBASE
 	python3.10 setup.py install
