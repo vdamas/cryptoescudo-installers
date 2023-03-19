@@ -27,8 +27,8 @@ else
 
 	# Install python 3.10
 	cd /tmp
-	wget wget https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tar.xz
-	tar -xzf Python-3.10.10.tar.xz
+	wget wget https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tar.gz
+	tar -xzf Python-3.10.10.tar.gz
 	cd Python-3.10.10
 	#./configure --enable-optimizations  -with-lto  --with-pydebug
 	./configure  -with-lto  --with-pydebug
