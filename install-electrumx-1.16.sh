@@ -39,6 +39,9 @@ else
 	# Install python dependencies
 	python3.10 -m pip install --upgrade pip setuptools wheel
 	python3.10 -m pip install --upgrade aiohttp pylru leveldb plyvel aiorpcx ecdsa aiorpcx
+ 
+ 	# Fix TypeError: WSTransport.ws_server() missing 1 required positional argument: _path on websockets==14
+        python3.10 -m pip install aiorpcX==0.22.1 websockets==10.4 --root-user-action ignore
 
 
 	# Install electrumX-1.16.0
